@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AES Image Encryption</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!-- Correct CSS link for Flask -->
+</head>
+<body>
+    <h1>AES Image Encryption and Decryption</h1>
+
+    <h2>Encrypt Image</h2>
+    <form action="/encrypt" method="post" enctype="multipart/form-data">
+        <label for="image">Select Image:</label>
+        <input type="file" name="image" id="image" required>
+        <button type="submit">Encrypt</button>
+    </form>
+
+    <h2>Decrypt Image</h2>
+    <form action="/decrypt" method="post" enctype="multipart/form-data">
+        <label for="encrypted_file">Select Encrypted File:</label>
+        <input type="file" name="encrypted_file" id="encrypted_file" required><br><br>
+        <label for="key">Enter AES Key (in Hex):</label>
+        <input type="text" name="key" id="key" required><br><br>
+        <button type="submit">Decrypt</button>
+    </form>
+</body>
+</html>

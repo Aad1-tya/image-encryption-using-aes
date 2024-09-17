@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption Key</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Encryption Complete!</h1>
+    <p>Your AES key (in hexadecimal) is:</p>
+    <textarea readonly rows="2" cols="50">{{ key }}</textarea>
+
+    <h2>Download Encrypted Image</h2>
+    <a href="/download/{{ encrypted_image_path }}">Download Encrypted Image</a>
+
+    <br><br>
+    <a href="/">Go Back</a>
+</body>
+</html>
